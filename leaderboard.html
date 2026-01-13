@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaderboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="top-nav">
+  <a href="index.html">Home</a>
+  <a href="assessments.html">MCQs</a>
+  <a href="roadmap.html">Roadmap</a>
+</nav>
+<h1>Top Scores</h1>
+<ul id="list"></ul>
+
+<script>
+(JSON.parse(localStorage.getItem("leaderboard")) || []).forEach(e => {
+  const li = document.createElement("li");
+  li.innerText = `Score: ${e.score} | ${e.date}`;
+  document.getElementById("list").appendChild(li);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MCQ Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="top-nav">
+  <a href="index.html">Home</a>
+  <a href="videos.html">Videos</a>
+  <a href="pdfs.html">PDFs</a>
+  <a href="assessments.html">MCQs</a>
+  <a href="roadmap.html">Roadmap</a>
+</nav>
+<h1>Networking MCQ Test</h1>
+<h2 id="timer">Time: 30</h2>
+
+<button onclick="filterCategory('all')">All</button>
+<button onclick="filterCategory('OSI')">OSI</button>
+<button onclick="filterCategory('TCP')">TCP</button>
+
+<form>
+  <div class="card" data-category="OSI">
+    Which OSI layer handles routing?<br>
+    <input type="radio" name="q1" value="a"> Transport<br>
+    <input type="radio" name="q1" value="b"> Network
+  </div>
+
+  <div class="card" data-category="TCP">
+    TCP is ______ oriented protocol.<br>
+    <input type="radio" name="q2" value="a"> Connection<br>
+    <input type="radio" name="q2" value="b"> Packet
+  </div>
+
+  <button type="button" onclick="submitQuiz()">Submit</button>
+</form>
+
+<h3 id="result"></h3>
+
+<script src="mcq.js"></script>
+<script src="progress.js"></script>
+</body>
+</html>

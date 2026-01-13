@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Networking Blogs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="top-nav">
+  <a href="index.html">Home</a>
+  <a href="videos.html">Videos</a>
+  <a href="pdfs.html">PDFs</a>
+  <a href="assessments.html">MCQs</a>
+  <a href="roadmap.html">Roadmap</a>
+</nav>
+<h1>Networking Blogs</h1>
+<div class="search-wrapper">
+  <span class="search-icon">🔍</span>
+  <input
+    type="text"
+    id="search"
+    placeholder="Search networking topics…"
+    aria-label="Search blogs"
+  />
+</div>
+
+<ul id="blogList">
+  <li data-category="Basics">
+    <a href="blog-detail.html?post=networking">What is Computer Networking?</a>
+  </li>
+  <li data-category="OSI">
+    <a href="blog-detail.html?post=osi">OSI Model Explained</a>
+  </li>
+  <li data-category="TCP">
+    <a href="blog-detail.html?post=tcp">TCP vs UDP</a>
+  </li>
+  <li data-category="DNS">
+    <a href="blog-detail.html?post=dns">How DNS Works</a>
+  </li>
+</ul>
+
+<script src="search.js"></script>
+</body>
+</html>

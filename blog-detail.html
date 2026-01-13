@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Blog | routeitip</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- GLOBAL NAV -->
+<nav class="top-nav">
+  <a href="index.html">Home</a>
+  <a href="blogs.html">Blogs</a>
+  <a href="videos.html">Videos</a>
+  <a href="pdfs.html">PDFs</a>
+  <a href="assessments.html">MCQs</a>
+  <a href="roadmap.html">Roadmap</a>
+</nav>
+
+<!-- ARTICLE -->
+<main class="article-wrapper">
+
+  <!-- Back link -->
+  <a href="blogs.html" class="back-link">← Back to Blogs</a>
+
+  <!-- Article Card -->
+  <article class="article-card">
+    <h1 id="title" class="article-title"></h1>
+
+    <div class="article-meta">
+      <span>📘 Computer Networking</span>
+      <span>•</span>
+      <span>5 min read</span>
+    </div>
+
+    <div id="content" class="article-content"></div>
+  </article>
+
+</main>
+
+<script>
+const posts = {
+  networking: {
+    title: "What is Computer Networking?",
+    content: `
+<p>Computer networking is the practice of connecting multiple computers and devices
+to share data, resources, and services.</p>
+
+<h3>Why networking is important?</h3>
+<ul>
+  <li>Enables communication between systems</li>
+  <li>Allows resource sharing (printers, files)</li>
+  <li>Forms the backbone of the internet</li>
+</ul>
+
+<h3>Real-world examples</h3>
+<ul>
+  <li>Internet</li>
+  <li>Office LAN</li>
+  <li>Cloud data centers</li>
+</ul>
+`
+  },
+  osi: {
+    title: "OSI Model Explained (Layer by Layer)",
+    content: `
+<p>The OSI (Open Systems Interconnection) model explains how data flows
+from one computer to another in a network.</p>
+
+<h3>7 Layers of OSI Model</h3>
+<ol>
+  <li><strong>Physical</strong> – Cables, signals</li>
+  <li><strong>Data Link</strong> – MAC address, switches</li>
+  <li><strong>Network</strong> – IP, routing</li>
+  <li><strong>Transport</strong> – TCP / UDP</li>
+  <li><strong>Session</strong> – Session management</li>
+  <li><strong>Presentation</strong> – Encryption</li>
+  <li><strong>Application</strong> – HTTP, FTP</li>
+</ol>
+
+<p class="tip">💡 Interview Tip: Routing always happens at Layer 3.</p>
+`
+  },
+  tcp: {
+    title: "TCP vs UDP – Key Differences",
+    content: `
+<h3>TCP (Transmission Control Protocol)</h3>
+<ul>
+  <li>Reliable</li>
+  <li>Connection-oriented</li>
+  <li>Ordered delivery</li>
+</ul>
+
+<h3>UDP (User Datagram Protocol)</h3>
+<ul>
+  <li>Fast</li>
+  <li>No delivery guarantee</li>
+  <li>Used in streaming & gaming</li>
+</ul>
+`
+  },
+  dns: {
+    title: "How DNS Works Behind the Scenes",
+    content: `
+<p>DNS converts human-readable domain names into IP addresses.</p>
+
+<h3>DNS Resolution Flow</h3>
+<ol>
+  <li>Browser cache</li>
+  <li>DNS resolver</li>
+  <li>Root server</li>
+  <li>TLD server</li>
+  <li>Authoritative server</li>
+</ol>
+
+<p class="tip">💡 DNS usually uses UDP on port 53.</p>
+`
+  }
+};
+
+const key = new URLSearchParams(window.location.search).get("post");
+
+if (posts[key]) {
+  document.getElementById("title").innerText = posts[key].title;
+  document.getElementById("content").innerHTML = posts[key].content;
+} else {
+  document.getElementById("title").innerText = "Blog not found";
+  document.getElementById("content").innerHTML =
+    "<p>Please go back to the blogs page.</p>";
+}
+</script>
+
+</body>
+</html>
